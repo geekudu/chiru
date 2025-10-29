@@ -905,6 +905,140 @@
         .fade-in:nth-child(4) { animation-delay: 0.4s; }
         .fade-in:nth-child(5) { animation-delay: 0.5s; }
         .fade-in:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Call for Abstracts Section */
+        .call-for-abstracts {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .call-for-abstracts::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        }
+
+        .call-for-abstracts .section-title {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .abstract-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .abstract-text h3 {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .abstract-text p {
+            font-size: 1.2em;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .abstract-features {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            font-size: 1.5em;
+        }
+
+        .abstract-cta {
+            text-align: center;
+        }
+
+        .btn-large {
+            font-size: 1.3em;
+            padding: 18px 40px;
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--white);
+        }
+
+        .btn-large:hover {
+            background: var(--gray-50);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .deadline {
+            margin-top: 20px;
+            font-size: 1.1em;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .abstract-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .abstract-features {
+                justify-content: center;
+            }
+
+            .feature-item {
+                flex-direction: column;
+                text-align: center;
+                min-width: 120px;
+            }
+
+            .call-for-abstracts {
+                padding: 60px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1003,6 +1137,38 @@
                 <p>Test your knowledge in an exciting competitive format</p>
             </div>
             
+        </div>
+    </section>
+
+    <section class="call-for-abstracts">
+        <div class="container">
+            <h2 class="section-title">Call for Abstracts</h2>
+            <div class="abstract-content">
+                <div class="abstract-text">
+                    <h3>Submit Your Research</h3>
+                    <p>We invite surgeons, residents, and medical professionals to submit their research abstracts for presentation at Chirurgia 2026. Share your innovative work, clinical experiences, and surgical techniques with the surgical community.</p>
+                    <div class="abstract-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">📝</span>
+                            <span>Paper Presentations</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📊</span>
+                            <span>Poster Displays</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🏆</span>
+                            <span>Competition & Awards</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="abstract-cta">
+                    <a href="https://forms.gle/VGcwNttYrbH26NP88" class="btn btn-primary btn-large" target="_blank">
+                        Submit Abstract
+                    </a>
+                    <p class="deadline">Deadline: January 30, 2026</p>
+                </div>
+            </div>
         </div>
     </section>
 
